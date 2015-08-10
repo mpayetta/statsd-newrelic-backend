@@ -91,6 +91,14 @@ You can configure which StatsD metrics should be sent to New Relic, by default o
         flushMetrics: ['gauges', 'counters', ...]
     }
     
+#### globalMetricPrefix
+Default: `null`
+
+The `globalMetricPrefix` option allows you to set a global prefix for all StatsD metrics. The prefix will be appended
+to the Custom metric name sent to New Relic, so that it will look like this: `Custom/GlobalPrefix/statsd.metric.key`
+
+This metric will **override** any custom prefixes configured in the `customMetricPrefix` option.
+
 #### customMetricPrefix
 Default:
     
