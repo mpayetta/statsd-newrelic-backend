@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "A backend implementation for StatsD which flushed the metrics data to a configured New Relic account",
   "main": "lib/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/mpayetta/statsd-newrelic-backend.git"
@@ -22,6 +19,11 @@
   },
   "homepage": "https://github.com/mpayetta/statsd-newrelic-backend",
   "dependencies": {
+    "lodash": "^3.10.1",
     "newrelic": "^1.21.2"
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "chai": "~3.2.0"
   }
 }
