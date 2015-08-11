@@ -127,3 +127,11 @@ where `metric.key` is the StatsD metric key.
 ## Dependencies
 - [newrelic](https://www.npmjs.com/package/newrelic)
 - [lodash](https://www.npmjs.com/package/lodash)
+
+
+## License
+See the [LICENSE](LICENSE.md) file for license rights and limitations (MIT).
+
+
+
+This plugin was developed with the help of the guys from [Takipi](https://www.takipi.com)
