@@ -11,7 +11,7 @@ library to send metrics data directly to a configured New Relic app.
 
 First you need to get the backend plugin by simply doing:
 
-    $ npm install statsd-newrelic-backend.git
+    $ npm install statsd-newrelic-backend
     
 Then configure your new relic app name and license key following any of the configuration options described [here](#configsection)
     
