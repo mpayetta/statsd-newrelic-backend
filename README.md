@@ -12,14 +12,19 @@ library to send metrics data directly to a configured New Relic app.
 First you need to get the backend plugin by simply doing:
 
     $ npm install statsd-newrelic-backend
-    
-Then configure your new relic app name and license key following any of the configuration options described [here](#configsection)
-    
-Finally, point your StatsD server to the New Relic backend index.js file by adding it to the backends array in your StatsD config.js:
+        
+Then, point your StatsD server to the New Relic backend index.js file by adding it to the backends array in your StatsD config.js.
 
+Finally add your app name and license key to the config.js file (or follow any of the configuration options described [here](#configsection)).
+
+In the end your config.js file will look like this:
+
+#### <a name="installation-config"></a> Example configuration
     {
     	...
-    	backends: ['path_to_statsd-newrelic-backend/lib/index.js']
+    	backends: ['statsd-newrelic-backend'],
+    	newRelicLicense: 'YOUR_LICENSE_KEY_HERE',
+        newRelicApp: 'YOUR_APP_NAME_HERE'
     	...
     }    
 
@@ -31,11 +36,16 @@ Restart your StatsD server and metrics will start to flow to your New Relic app.
 According the the node.js [agent configuration docs](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/configuring-nodejs)
 There are several ways to configure the agent. This backend supports all of them and are listed below:
 
+#### StatsD config.js file
+The easiest option is to add two new configuration properties to the StatsD config file: `newRelicLicense` and `newRelicApp`
+as stated in the example config in the [Installation](#installation-config) section.
+This method will set the [Environment Variables](#env-var) right before the New Relic agent is initialized.
+
 #### Server side configuration
 This configuration is the first one in the hierarchy and overrides all other settings unless disabled. You can configure
 your app on the server side directly from your New Relic account. For more info look [here](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/configuring-nodejs#ui_settings)
 
-#### Environment variables
+#### <a name="env-var"></a> Environment variables
 You can set different environment variables in your server to configure the New Relic agent. For more information look [here](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/configuring-nodejs-environment-variables)
 
 #### newrelic.js configuration file
@@ -51,19 +61,6 @@ And edit the app_name and license_key with you app and license key data:
         app_name: ['Your new relic app name here'],
         license_key: 'Your new relic license key here',
     }
-
-#### StatsD config.js file
-The last option is to add two new configuration properties to the StatsD config file: `newRelicLicense` and `newRelicApp`
-
-    {
-          port: ...,
-          backends: [ ... ],
-          newRelicLicense: 'YOUR_LICENSE_KEY_HERE',
-          newRelicApp: 'YOUR_APP_NAME_HERE'
-    }
-
-This method will use the environment variables configuration by setting them right before the New Relic agent is 
-initialized.
 
 ### StatsD Backend 
 There are a few configuration options for the backend. They must all be provided in the StatsD config.js file.
