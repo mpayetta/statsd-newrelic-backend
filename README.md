@@ -19,7 +19,8 @@ Finally add your app name and license key to the config.js file (or follow any o
 
 In the end your config.js file will look like this:
 
-#### <a name="installation-config"></a> Example configuration
+<a name="installation-config"></a> **Example configuration**
+    
     {
     	...
     	backends: ['statsd-newrelic-backend'],
@@ -32,7 +33,7 @@ Restart your StatsD server and metrics will start to flow to your New Relic app.
 
 ## <a name="configsection"></a> Configuration
 
-### New Relic Agent
+### New Relic Agent Configuration
 According the the node.js [agent configuration docs](https://docs.newrelic.com/docs/agents/nodejs-agent/installation-configuration/configuring-nodejs)
 There are several ways to configure the agent. This backend supports all of them and are listed below:
 
@@ -62,7 +63,7 @@ And edit the app_name and license_key with you app and license key data:
         license_key: 'Your new relic license key here',
     }
 
-### StatsD Backend 
+### StatsD Backend Configuration
 There are a few configuration options for the backend. They must all be provided in the StatsD config.js file.
 
 #### flushMetrics
