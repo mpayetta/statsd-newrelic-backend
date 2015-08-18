@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/mpayetta/statsd-newrelic-backend",
   "scripts": {
+    "lint": "node_modules/.bin/gulp lint",
     "test": "node_modules/.bin/mocha -w --recursive"
   },
   "dependencies": {
@@ -27,6 +28,8 @@
   },
   "devDependencies": {
     "chai": "~3.2.0",
+    "gulp": "^3.9.0",
+    "gulp-jslint": "^0.2.2",
     "mocha": "*",
     "sinon": "^1.15.4"
   }

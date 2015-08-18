@@ -1,3 +1,7 @@
+/*jslint unparam: true, node: true */
+/*global describe, it, beforeEach */
+'use strict';
+
 var sinon = require('sinon'),
     assert = require('chai').assert;
 
@@ -7,19 +11,19 @@ var prefixes = {
 };
 
 var newrelicSpy;
-var newrelic = { }
+var newrelic = { };
 
 var dispatchCustomMetric = require('../../lib/dispatcher/dispatchers/custom-metric')(newrelic, prefixes);
 
-describe('custom metric dispatcher test', function() {
+describe('custom metric dispatcher test', function () {
 
-    beforeEach(function() {
+    beforeEach(function () {
         newrelicSpy = sinon.spy();
         newrelic.recordMetric = newrelicSpy;
     });
 
-    describe('when dispatching a counter custom metric', function() {
-        it('should call successfully new relic recordMetric api', function(done) {
+    describe('when dispatching a counter custom metric', function () {
+        it('should call successfully new relic recordMetric api', function (done) {
             dispatchCustomMetric('counters', 'some.counter.key', 123);
             assert(newrelicSpy.calledOnce);
             assert(newrelicSpy.calledWith('Custom/Counters/some.counter.key', 123),
@@ -29,8 +33,8 @@ describe('custom metric dispatcher test', function() {
         });
     });
 
-    describe('when dispatching a timer custom metric', function() {
-        it('should call successfully new relic recordMetric api', function(done) {
+    describe('when dispatching a timer custom metric', function () {
+        it('should call successfully new relic recordMetric api', function (done) {
             dispatchCustomMetric('timers', 'some.timer.key', [0, 5, 4, 6, 7]);
             assert(newrelicSpy.calledOnce);
             assert(newrelicSpy.calledWith('Custom/Timers/some.timer.key', { min: 0, max: 7, total: 22, count: 5, sumOfSquares: 126}),
@@ -38,7 +42,7 @@ describe('custom metric dispatcher test', function() {
 
             done();
         });
-    })
+    });
 
 
 });

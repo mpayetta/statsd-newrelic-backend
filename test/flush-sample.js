@@ -1,3 +1,6 @@
+/*jslint node: true */
+'use strict';
+
 module.exports = {
     counters: {
         'statsd.samplecounter1': 3,

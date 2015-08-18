@@ -1,15 +1,18 @@
-var prefixes = {
-    counters: 'Counters'
-};
+/*jslint unparam: true, node: true */
+/*global describe, it*/
+'use strict';
 
-var metricNames = require('../lib/dispatcher/metric-name')(prefixes),
+var prefixes = {
+        counters: 'Counters'
+    },
+    metricNames = require('../lib/dispatcher/metric-name')(prefixes),
     assert = require('chai').assert;
 
-describe('test for metric names generation', function() {
+describe('test for metric names generation', function () {
 
-    describe('when asked for a custom metric name', function() {
+    describe('when asked for a custom metric name', function () {
 
-        it('should return a name compliant with new relic standards', function(done) {
+        it('should return a name compliant with new relic standards', function (done) {
             var name = metricNames.customMetricName('counters', 'some.counter.key');
             assert.equal(name, 'Custom/Counters/some.counter.key', 'custom metric name must follow new relic standard');
 
@@ -18,9 +21,9 @@ describe('test for metric names generation', function() {
 
     });
 
-    describe('when asked for a custom event name', function() {
+    describe('when asked for a custom event name', function () {
 
-        it('should return a name compliant with new relic standards', function(done) {
+        it('should return a name compliant with new relic standards', function (done) {
             var name = metricNames.customEventName('counters', 'some.counter.key');
             assert.equal(name, 'Counters_some_counter_key', 'custom event name must follow new relic standard');
 
