@@ -75,7 +75,7 @@ Usage:
 
     {
         ...
-        flushMetrics: ['gauges', 'counters', ...]
+        dispatchMetrics: ['gauges', 'counters', ...]
         ...
     }
     
