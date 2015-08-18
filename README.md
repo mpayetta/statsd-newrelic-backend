@@ -66,7 +66,7 @@ And edit the app_name and license_key with you app and license key data:
 ### StatsD Backend Configuration
 There are a few configuration options for the backend. They must all be provided in the StatsD config.js file.
 
-#### flushMetrics
+#### dispatchMetrics
 Default: `['gauges', 'counters']`
 You can configure which StatsD metrics should be sent to New Relic, by default only gauges and counters will be sent.
    
