@@ -1,6 +1,6 @@
 {
   "name": "statsd-newrelic-backend",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "description": "A backend implementation for StatsD which flushed the metrics data to a configured New Relic account",
   "main": "lib/index.js",
   "repository": {
