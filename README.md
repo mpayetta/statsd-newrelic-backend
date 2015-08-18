@@ -130,6 +130,11 @@ Usage:
 The example above will send the gauges metrics as `Custom/Gauges/metric.key` and the timers as `Custom/SomeNameForTimers/metric.key`
 where `metric.key` is the StatsD metric key.
 
+## Tests
+Tests can be run with gulp using the mocha task:
+
+`gulp mocha`
+
 ## Dependencies
 - [newrelic](https://www.npmjs.com/package/newrelic)
 - [lodash](https://www.npmjs.com/package/lodash)
