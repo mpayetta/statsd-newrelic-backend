@@ -18,12 +18,16 @@
     "url": "https://github.com/mpayetta/statsd-newrelic-backend/issues"
   },
   "homepage": "https://github.com/mpayetta/statsd-newrelic-backend",
+  "scripts": {
+    "test": "node_modules/.bin/mocha -w --recursive"
+  },
   "dependencies": {
     "lodash": "^3.10.1",
     "newrelic": "^1.21.2"
   },
   "devDependencies": {
+    "chai": "~3.2.0",
     "mocha": "*",
-    "chai": "~3.2.0"
+    "sinon": "^1.15.4"
   }
 }

@@ -70,9 +70,29 @@ There are a few configuration options for the backend. They must all be provided
 Default: `['gauges', 'counters']`
 You can configure which StatsD metrics should be sent to New Relic, by default only gauges and counters will be sent.
    
+Usage:
+
+
     {
         ...
         flushMetrics: ['gauges', 'counters', ...]
+        ...
+    }
+    
+#### dispatchers
+Default: `['customEvent']`
+Dispatchers are functions which send metrics to new relic using different APIs. There are 2 dispatchers available:
+
+- customMetric: will send metrics to new relic as [custom metrics](https://docs.newrelic.com/docs/apm/other-features/metrics/custom-metrics)
+- customEvent: will send metrics to new relic as [insights custom events](https://docs.newrelic.com/docs/insights/new-relic-insights/understanding-insights/new-relic-insights)
+   
+Usage:
+
+
+    {
+        ...
+        dispatchers: ['customEvent', 'customMetric']
+        ...
     }
     
 #### globalMetricPrefix
@@ -95,6 +115,8 @@ Default:
 
 You can configure the New Relic custom metric names. By default all metric names will be `Custom/metric.key`
 Every type of StatsD metric must be a key in the `customMetricPrefix` object:
+
+Usage:
 
     {
         customMetricPrefix: {
