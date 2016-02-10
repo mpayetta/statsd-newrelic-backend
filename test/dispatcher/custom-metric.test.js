@@ -28,7 +28,6 @@ describe('custom metric dispatcher test', function () {
             assert(newrelicSpy.calledOnce);
             assert(newrelicSpy.calledWith('Custom/Counters/some.counter.key', 123),
                 'recordMetric must be called');
-
             done();
         });
     });
